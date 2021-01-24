@@ -1,0 +1,14 @@
+.container {
+  width: 90px;
+  height: 90px;
+  border-radius: 4px;
+  background-color: white;
+  margin: 5px;
+  
+}
+
+span {
+  font-size: 40px;
+  font-weight: bolder;
+  color: black;
+}

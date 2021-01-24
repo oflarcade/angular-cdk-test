@@ -1,0 +1,28 @@
+<app-header></app-header>
+<span>Main Container</span>
+<div class="container">
+	<div class="main-container">
+		<div class="grid-row" (cdkDropListData)="data" cdkDropList
+			[cdkDropListConnectedTo]="[respDrag, notResponsibleListDrag]">
+
+			<div *ngFor="let d of data" #draggable="cdkDrag" cdkDrag class="grid-item"
+				(cdkDropListDropped)="drop($event)">
+				<main-card [id]="d.id"></main-card>
+			</div>
+		</div>
+	</div>
+	<div class="side-container" cdkDropListGroup>
+		<div class="resp">
+			<span>Responsible</span>
+			<div *ngFor="let item of responsible; index as i" #respDrag="cdkDropList" cdkDropList>
+				<side-card [id]="i"></side-card>
+			</div>
+		</div>
+		<div class="not-resp">
+			<span>Not Responsible</span>
+			<div *ngFor="let item of notResponsible; index as i" #notRespDrag="cdkDropList" cdkDropList>
+				<side-card [id]="i"></side-card>
+			</div>
+		</div>
+	</div>
+</div>
